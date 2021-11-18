@@ -12,9 +12,9 @@
         <title>View</title>
     </head>
     <body>
-        <% 
-            Person p = (Person) request.getAttribute("person");
-        %>
-        <b>Data Stored ya </b> <%= p.getName() %>
+        <b>Data Stored ya </b> 
+        <jsp:useBean id="person" class="model.Person" scope="request" />
+        <jsp:getProperty property="name" name="person"/><br>
+        <jsp:include page="IncludedPage.html"/>
     </body>
 </html>
